@@ -121,6 +121,7 @@ def register():
 
         db.session.add(new_user)
         db.session.commit()
+        session['user']=new_user.id
         return redirect(url_for('medical_register'))
     return render_template('register.html')
 
